@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Omkar Rathod - Portfolio Website
 
 A clean, responsive, and professional personal portfolio website for Omkar Rathod, a final-year B.E. CSE (AI & ML) student.
@@ -181,3 +182,6 @@ You can customize these colors in the CSS file to match your personal brand.
 ---
 
 **Built with ❤️ for showcasing professional portfolios** 
+=======
+# Omkar-Rathod-Portfolio
+>>>>>>> ae33d4d89454fb66da99ee10104c7bffef037780
