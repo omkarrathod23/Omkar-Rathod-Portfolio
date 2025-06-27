@@ -50,6 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Slider arrow scroll for mobile skill sliders
+    document.querySelectorAll('.slider-with-arrows').forEach(function(slider) {
+        const leftArrow = slider.querySelector('.slider-arrow.left');
+        const rightArrow = slider.querySelector('.slider-arrow.right');
+        const content = slider.querySelector('.slider-content');
+        if (leftArrow && content) {
+            leftArrow.addEventListener('click', function(e) {
+                content.scrollBy({ left: -120, behavior: 'smooth' });
+            });
+        }
+        if (rightArrow && content) {
+            rightArrow.addEventListener('click', function(e) {
+                content.scrollBy({ left: 120, behavior: 'smooth' });
+            });
+        }
+    });
 });
 
 // Navigation functionality

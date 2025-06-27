@@ -3063,34 +3063,188 @@ body.light-mode .contact-icon {
 }
 
 @media (max-width: 600px) {
-  .skills-icons-columns {
-    flex-direction: column;
-    gap: 1em;
-    align-items: stretch;
-    padding: 0;
+  .skills-icons-columns, .skills-column {
+    display: none !important;
   }
-  .skills-column {
-    max-width: 100%;
-    min-width: 0;
-    padding: 1em 0.2em;
-    box-sizing: border-box;
+  .skills-text-slider-mobile {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 0.7em;
+    padding: 1.1em 0.5em 1.1em 0.5em;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #3182ce #232946;
+    animation: fadeInRight 0.8s cubic-bezier(.23,1.01,.32,1);
+    background: rgba(30, 41, 59, 0.55);
+    border-radius: 1.5em;
+    box-shadow: 0 4px 24px 0 #3182ce22, 0 1.5px 8px 0 #805ad522;
+    border: 1.5px solid rgba(49,130,206,0.13);
+    margin-bottom: 1.1em;
+    backdrop-filter: blur(8px);
   }
-  .skills-row {
-    flex-wrap: wrap;
-    gap: 1em;
+  .skill-chip {
+    display: inline-block;
+    background: rgba(49,130,206,0.13);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.08em;
+    border-radius: 2em;
+    padding: 0.65em 1.5em;
+    box-shadow: 0 2px 8px 0 #3182ce22;
+    margin: 0;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-image: linear-gradient(90deg, #3182ce 0%, #805ad5 100%) 1;
+    transition: background 0.18s, transform 0.18s, box-shadow 0.18s, border 0.18s;
+    cursor: pointer;
+    animation: chipSlideIn 0.7s cubic-bezier(.23,1.01,.32,1);
+    letter-spacing: 0.01em;
+  }
+  .skill-chip:active, .skill-chip:focus, .skill-chip:hover {
+    background: linear-gradient(90deg, #3182ce 0%, #805ad5 100%);
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 24px 0 #3182ce55, 0 2px 8px 0 #805ad555;
+    transform: scale(1.11) rotate(-2deg);
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar {
+    height: 6px;
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar-thumb {
+    background: #3182ce;
+    border-radius: 3px;
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar-track {
+    background: #232946;
+  }
+  @keyframes chipSlideIn {
+    0% { opacity: 0; transform: translateX(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+  }
+  @keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(60px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+}
+
+.skills-text-slider-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .skills-icons-columns, .skills-column {
+    display: none !important;
+  }
+  .skills-text-slider-mobile {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 0.7em;
+    padding: 1.1em 0.5em 1.1em 0.5em;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #3182ce #232946;
+    animation: fadeInRight 0.8s cubic-bezier(.23,1.01,.32,1);
+    background: rgba(30, 41, 59, 0.55);
+    border-radius: 1.5em;
+    box-shadow: 0 4px 24px 0 #3182ce22, 0 1.5px 8px 0 #805ad522;
+    border: 1.5px solid rgba(49,130,206,0.13);
+    margin-bottom: 1.1em;
+    backdrop-filter: blur(8px);
+  }
+  .skill-chip {
+    display: inline-block;
+    background: rgba(49,130,206,0.13);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.08em;
+    border-radius: 2em;
+    padding: 0.65em 1.5em;
+    box-shadow: 0 2px 8px 0 #3182ce22;
+    margin: 0;
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-image: linear-gradient(90deg, #3182ce 0%, #805ad5 100%) 1;
+    transition: background 0.18s, transform 0.18s, box-shadow 0.18s, border 0.18s;
+    cursor: pointer;
+    animation: chipSlideIn 0.7s cubic-bezier(.23,1.01,.32,1);
+    letter-spacing: 0.01em;
+  }
+  .skill-chip:active, .skill-chip:focus, .skill-chip:hover {
+    background: linear-gradient(90deg, #3182ce 0%, #805ad5 100%);
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 24px 0 #3182ce55, 0 2px 8px 0 #805ad555;
+    transform: scale(1.11) rotate(-2deg);
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar {
+    height: 6px;
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar-thumb {
+    background: #3182ce;
+    border-radius: 3px;
+  }
+  .skills-text-slider-mobile::-webkit-scrollbar-track {
+    background: #232946;
+  }
+  @keyframes chipSlideIn {
+    0% { opacity: 0; transform: translateX(40px) scale(0.95); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+  }
+  @keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(60px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-with-arrows {
+    position: relative;
+    display: flex !important;
+    align-items: center;
+    padding: 1.1em 0.5em 1.1em 0.5em;
+    background: rgba(30, 41, 59, 0.55);
+    border-radius: 1.5em;
+    box-shadow: 0 4px 24px 0 #3182ce22, 0 1.5px 8px 0 #805ad522;
+    border: 1.5px solid rgba(49,130,206,0.13);
+    margin-bottom: 1.1em;
+    backdrop-filter: blur(8px);
     justify-content: center;
   }
-  .skill-icon-anim {
-    min-width: 48px;
-    min-height: 60px;
-    margin: 0 0.3em 0.7em 0.3em;
+  .slider-arrow {
+    position: static;
+    background: linear-gradient(135deg, #3182ce 0%, #805ad5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.2em;
+    height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px 0 #3182ce33;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+    opacity: 0.92;
+    margin: 0 0.5em;
+    flex-shrink: 0;
   }
-  .skill-icon {
-    width: 38px;
-    height: 38px;
+  .slider-arrow:active, .slider-arrow:focus, .slider-arrow:hover {
+    background: linear-gradient(135deg, #805ad5 0%, #3182ce 100%);
+    box-shadow: 0 6px 18px 0 #805ad555;
+    transform: scale(1.08);
   }
-  .icon-label {
-    font-size: 0.92rem;
+  .slider-content {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.7em;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #3182ce #232946;
+    flex: 1 1 auto;
+    padding: 0;
   }
 }
 
