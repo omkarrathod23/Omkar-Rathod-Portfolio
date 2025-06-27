@@ -3248,3 +3248,15 @@ body.light-mode .contact-icon {
   }
 }
 
+@media (max-width: 600px) {
+  .chip-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    border-radius: 4px;
+    display: inline-block;
+    object-fit: contain;
+  }
+}
+
