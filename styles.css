@@ -2404,9 +2404,14 @@ html {
 }
 .skills-row {
     display: flex;
-    gap: 2em;
+    flex-wrap: nowrap;
+    gap: 0.5em;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+.skills-column {
+    overflow: hidden;
 }
 .skill-icon {
     width: 48px;
@@ -3054,6 +3059,38 @@ body.light-mode .contact-icon {
     justify-content: flex-start;
     font-size: 1em;
     padding: 0.6em 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-icons-columns {
+    flex-direction: column;
+    gap: 1em;
+    align-items: stretch;
+    padding: 0;
+  }
+  .skills-column {
+    max-width: 100%;
+    min-width: 0;
+    padding: 1em 0.2em;
+    box-sizing: border-box;
+  }
+  .skills-row {
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+  }
+  .skill-icon-anim {
+    min-width: 48px;
+    min-height: 60px;
+    margin: 0 0.3em 0.7em 0.3em;
+  }
+  .skill-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .icon-label {
+    font-size: 0.92rem;
   }
 }
 
