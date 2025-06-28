@@ -124,6 +124,20 @@
             <div class="ai-header-card glass-card">
                 <div class="ai-header-main">
                     <div class="ai-profile-photo-glow animated-glow">
+                        <!-- Animated background behind profile photo -->
+                        <div class="profile-bg-anim">
+                            <svg width="220" height="220" viewBox="0 0 220 220" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;" fill="none">
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="90" fill="#3182ce22">
+                                    <animate attributeName="r" values="90;100;90" dur="4s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="60" fill="#805ad522">
+                                    <animate attributeName="r" values="60;70;60" dur="5s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="35" fill="#38a16922">
+                                    <animate attributeName="r" values="35;45;35" dur="3.5s" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
+                        </div>
                         <div class="profile-photo ai-glow">
                             <img src="profile-photo.jpg" 
                                  onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/1a365d/ffffff?text=OR';" 
@@ -218,7 +232,6 @@
             <!-- Technical Skills Section -->
             <section class="section" id="skills">
                 <h2 class="section-title"><span class="section-icon"><i class="fas fa-microchip"></i></span> Technical Skills</h2>
-                <div class="skills-slider-heading-mobile">AI/ML & Data Science</div>
                 <div class="skills-text-slider-mobile slider-with-arrows">
                     <button class="slider-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
                     <div class="slider-content">
@@ -244,7 +257,6 @@
                     </div>
                     <button class="slider-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="skills-slider-heading-mobile">Technical Tools</div>
                 <div class="skills-text-slider-mobile slider-with-arrows">
                     <button class="slider-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
                     <div class="slider-content">
@@ -457,6 +469,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Contact Button for Mobile -->
+    <button class="mobile-contact-btn" aria-label="Contact" onclick="window.scrollTo({top: document.getElementById('contact').offsetTop - 60, behavior: 'smooth'});">
+        <i class="fas fa-envelope"></i>
+    </button>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

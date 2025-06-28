@@ -2553,27 +2553,13 @@ html {
 }
 @media (max-width: 600px) {
   #theme-toggle {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    left: auto;
-    top: auto;
-    z-index: 4000;
-    width: 54px;
-    height: 54px;
-    font-size: 1.6rem;
-    box-shadow: 0 4px 16px 0 #23294633;
-    background: linear-gradient(135deg, #232946 0%, #3182ce 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    opacity: 0.96;
-    animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) 0.5s both;
-  }
-  #theme-toggle:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 8px 0 #3182ce22;
+    top: 8px;
+    left: 342px;
+    right: auto;
+    width: 33px;
+    height: 33px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px 0 #23294622;
   }
 }
 #theme-toggle:hover {
@@ -3274,36 +3260,126 @@ body.light-mode .contact-icon {
   }
 }
 
-@media (max-width: 600px) {
-  .skills-slider-heading-mobile {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.13em;
-    background: linear-gradient(90deg, #3182ce 0%, #805ad5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    margin: 0.7em 0 0.2em 0;
-    letter-spacing: 0.01em;
-  }
+/* --- SIMPLE, ATTRACTIVE HOME PAGE ANIMATIONS --- */
+
+/* 1. Animated Home Card (Profile Box) */
+.ai-header-card {
+  animation: cardFloat 5s ease-in-out infinite alternate;
+  box-shadow: 0 8px 32px 0 rgba(49,130,206,0.10), 0 2px 8px rgba(49,130,206,0.08);
+  border: 2.5px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  position: relative;
+  transition: box-shadow 0.4s, border-color 0.4s, transform 0.3s;
+}
+@keyframes cardFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
+.ai-header-card::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 2.5rem;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(120deg, #3182ce 0%, #805ad5 100%);
+  opacity: 0.13;
+  transition: opacity 0.3s;
+}
+.ai-header-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 16px 48px 0 #3182ce33, 0 4px 16px #805ad533;
+}
+.ai-header-card:hover::after {
+  opacity: 0.22;
 }
 
-body.light-mode .nav-menu {
-  background: #fff !important;
+/* 2. Subtle Animated Background */
+.animated-bg {
+  background: linear-gradient(120deg, #232946 0%, #3182ce 50%, #805ad5 100%);
+  background-size: 200% 200%;
+  animation: bgGradientMove 22s ease-in-out infinite alternate;
+  opacity: 0.7;
 }
-body.light-mode .nav-link {
-  color: #232946 !important;
+@keyframes bgGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 3. Micro-interactions for Buttons */
+.download-resume-btn, .project-btn {
+  transition: transform 0.18s, background 0.18s, box-shadow 0.18s;
+}
+.download-resume-btn:hover, .project-btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  background: linear-gradient(90deg, #805ad5 0%, #3182ce 100%);
+  box-shadow: 0 4px 16px 0 #3182ce33;
+}
+
+/* 4. Gentle Pulse for Contact Button */
+.mobile-contact-btn {
+  animation: contactPulse 2.2s cubic-bezier(.4,1.6,.6,1) infinite alternate;
+}
+@keyframes contactPulse {
+  0% { box-shadow: 0 0 0 0 #3182ce44; }
+  100% { box-shadow: 0 0 16px 4px #3182ce55; }
+}
+
+/* --- UNIQUE PROFILE PHOTO ANIMATION --- */
+.profile-photo.ai-glow {
+  opacity: 0;
+  transform: scale(0.92) rotate(-2deg);
+  animation: profileEntrance 1.2s cubic-bezier(.23,1.01,.32,1) 0.2s forwards, profileRotate 6s ease-in-out infinite alternate, profileGlowCycle 4s linear infinite;
+  box-shadow: 0 0 32px 0 #3182ce66, 0 0 64px 0 #805ad544;
+  transition: box-shadow 0.4s, transform 0.3s;
+}
+@keyframes profileEntrance {
+  0% { opacity: 0; transform: scale(0.92) rotate(-2deg); }
+  80% { opacity: 1; transform: scale(1.08) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes profileRotate {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1) rotate(2deg); }
+}
+@keyframes profileGlowCycle {
+  0% { box-shadow: 0 0 32px 0 #3182ce66, 0 0 64px 0 #805ad544; }
+  25% { box-shadow: 0 0 48px 0 #805ad5aa, 0 0 80px 0 #3182ce55; }
+  50% { box-shadow: 0 0 32px 0 #38a16966, 0 0 64px 0 #805ad544; }
+  75% { box-shadow: 0 0 48px 0 #3182ceaa, 0 0 80px 0 #805ad555; }
+  100% { box-shadow: 0 0 32px 0 #3182ce66, 0 0 64px 0 #805ad544; }
+}
+.profile-photo.ai-glow:hover {
+  transform: scale(1.06) rotate(0deg);
+  box-shadow: 0 0 64px 0 #805ad5cc, 0 0 128px 0 #3182ce99;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.profile-bg-anim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: blur(6px) brightness(1.15);
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .profile-bg-anim {
+    width: 140px;
+    height: 140px;
+  }
 }
 @media (max-width: 600px) {
-  body.light-mode .hamburger-line {
-    background: #232946 !important;
+  .profile-bg-anim {
+    width: 100px;
+    height: 100px;
   }
-  body.light-mode .nav-menu {
-    background: #fff !important;
-  }
-  body.light-mode .nav-link {
-    color: #232946 !important;
-  }
+}
+.bg-anim-circle {
+  transition: fill 0.5s;
 }
 
