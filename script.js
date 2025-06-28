@@ -1178,4 +1178,23 @@ function animateHeroNameTyping() {
     const style = document.createElement('style');
     style.textContent = `@keyframes blink-cursor { 0%,100%{opacity:1;} 50%{opacity:0;} }`;
     document.head.appendChild(style);
+})();
+
+// Animated role switcher: AI/ML Engineer <-> Data Science
+(function() {
+  const roleEl = document.getElementById('hero-role-animated');
+  if (!roleEl) return;
+  const roles = ['AI/ML Engineer', 'Data Science'];
+  let idx = 0;
+  setInterval(() => {
+    // Fade out
+    roleEl.style.transition = 'opacity 0.5s';
+    roleEl.style.opacity = 0;
+    setTimeout(() => {
+      idx = (idx + 1) % roles.length;
+      roleEl.textContent = roles[idx];
+      // Fade in
+      roleEl.style.opacity = 1;
+    }, 500);
+  }, 2500);
 })(); 
