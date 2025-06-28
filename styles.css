@@ -2553,14 +2553,34 @@ html {
 }
 @media (max-width: 600px) {
   #theme-toggle {
-    top: 8px;
-    left: 342px;
-    right: auto;
-    width: 33px;
-    height: 33px;
-    font-size: 1.2rem;
-    box-shadow: 0 2px 8px 0 #23294622;
+    position: fixed;
+    bottom: 80px;
+    right: 18px;
+    left: auto;
+    top: auto;
+    width: 54px;
+    height: 54px;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 24px 0 #805ad555, 0 2px 8px 0 #3182ce33;
+    z-index: 2000;
+    background: linear-gradient(135deg, #232946 0%, #3182ce 100%);
+    animation: themeBtnBounceIn 0.7s cubic-bezier(.23,1.01,.32,1) 0.2s both, themeBtnPulse 2.2s cubic-bezier(.4,1.6,.6,1) infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   }
+}
+@keyframes themeBtnBounceIn {
+  0% { opacity: 0; transform: scale(0.7) translateY(60px); }
+  80% { opacity: 1; transform: scale(1.08) translateY(-8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes themeBtnPulse {
+  0% { box-shadow: 0 0 0 0 #3182ce44, 0 4px 24px 0 #805ad555; }
+  100% { box-shadow: 0 0 24px 8px #3182ce55, 0 4px 24px 0 #805ad555; }
 }
 #theme-toggle:hover {
   background: linear-gradient(135deg, #3182ce 0%, #805ad5 100%);
