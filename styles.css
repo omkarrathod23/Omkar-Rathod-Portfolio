@@ -3478,3 +3478,124 @@ body.light-mode .ai-brain-rocking {
     }
 }
 
+/* Mobile-friendly Technical Skills Redesign */
+@media (max-width: 768px) {
+    .skills-icons-columns {
+        display: none !important; /* Hide desktop version on mobile */
+    }
+    
+    .skills-text-slider-mobile {
+        display: none !important; /* Hide the sliders on mobile */
+    }
+    
+    /* New Mobile Skills Grid */
+    .mobile-skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .mobile-skill-card {
+        background: linear-gradient(135deg, rgba(49, 130, 206, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+        border: 1px solid rgba(49, 130, 206, 0.2);
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(49, 130, 206, 0.2);
+        border-color: rgba(49, 130, 206, 0.4);
+    }
+    
+    .mobile-skill-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 0.5rem;
+        display: block;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+    
+    .mobile-skill-name {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 0;
+        line-height: 1.2;
+    }
+    
+    /* Skills Categories */
+    .mobile-skills-category {
+        margin-bottom: 2rem;
+    }
+    
+    .mobile-category-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin-bottom: 1rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+    
+    .mobile-category-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, #3182ce, #7c3aed);
+        border-radius: 2px;
+    }
+    
+    /* Compact 4-column grid for smaller screens */
+    @media (max-width: 480px) {
+        .mobile-skills-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .mobile-skill-card {
+            padding: 0.75rem 0.5rem;
+        }
+        
+        .mobile-skill-icon {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .mobile-skill-name {
+            font-size: 0.7rem;
+        }
+    }
+    
+    /* Very small screens */
+    @media (max-width: 360px) {
+        .mobile-skills-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .mobile-skill-card {
+            padding: 0.5rem 0.25rem;
+        }
+        
+        .mobile-skill-icon {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .mobile-skill-name {
+            font-size: 0.65rem;
+        }
+    }
+}
+
