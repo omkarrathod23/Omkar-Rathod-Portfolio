@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omkar Rathod - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="#home" class="logo-link">
+                        <i class="fas fa-code"></i>
+                        <span class="logo-text">Omkar Rathod</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#education" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </a>
+                    <a href="#experience" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Experience</span>
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full-page neural network SVG background -->
+    <div class="ai-bg-svg-full">
+        <svg id="neural-bg" width="100vw" height="100vh" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;">
+            <defs>
+                <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#fff" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#2e4bdb" stop-opacity="0.2"/>
+                </radialGradient>
+            </defs>
+            <g id="nn-lines">
+                <line x1="200" y1="200" x2="600" y2="400" stroke="#2e4bdb" stroke-width="5" opacity="0.22"/>
+                <line x1="600" y1="400" x2="1200" y2="300" stroke="#0c0021" stroke-width="5" opacity="0.22"/>
+                <line x1="1200" y1="300" x2="1700" y2="700" stroke="#2e4bdb" stroke-width="5" opacity="0.22"/>
+                <line x1="600" y1="400" x2="1700" y2="700" stroke="#38a169" stroke-width="5" opacity="0.22"/>
+                <line x1="200" y1="200" x2="1200" y2="300" stroke="#805ad5" stroke-width="4" opacity="0.18"/>
+                <line x1="200" y1="200" x2="1700" y2="700" stroke="#00bcd4" stroke-width="3.5" opacity="0.15"/>
+                <line x1="1200" y1="300" x2="1500" y2="120" stroke="#3182ce" stroke-width="4" opacity="0.18"/>
+                <line x1="1500" y1="120" x2="1700" y2="700" stroke="#805ad5" stroke-width="3.5" opacity="0.15"/>
+                <!-- Corners -->
+                <line x1="100" y1="100" x2="200" y2="200" stroke="#3182ce" stroke-width="3" opacity="0.13"/>
+                <line x1="1820" y1="980" x2="1700" y2="700" stroke="#38a169" stroke-width="3" opacity="0.13"/>
+                <line x1="1820" y1="100" x2="1500" y2="120" stroke="#805ad5" stroke-width="3" opacity="0.13"/>
+                <line x1="100" y1="980" x2="600" y2="400" stroke="#00bcd4" stroke-width="3" opacity="0.13"/>
+            </g>
+            <g id="nn-nodes">
+                <circle id="node1" cx="200" cy="200" r="32" fill="url(#nodeGlow)"/>
+                <circle id="node2" cx="600" cy="400" r="38" fill="url(#nodeGlow)"/>
+                <circle id="node3" cx="1200" cy="300" r="36" fill="url(#nodeGlow)"/>
+                <circle id="node4" cx="1700" cy="700" r="44" fill="url(#nodeGlow)"/>
+                <circle id="node5" cx="1500" cy="120" r="28" fill="url(#nodeGlow)"/>
+                <circle id="node6" cx="100" cy="100" r="18" fill="url(#nodeGlow)"/>
+                <circle id="node7" cx="1820" cy="980" r="22" fill="url(#nodeGlow)"/>
+                <circle id="node8" cx="1820" cy="100" r="18" fill="url(#nodeGlow)"/>
+                <circle id="node9" cx="100" cy="980" r="22" fill="url(#nodeGlow)"/>
+            </g>
+            <g id="nn-datapoints">
+                <circle id="datapoint1" r="10" fill="#38a169" opacity="0.85"/>
+                <circle id="datapoint2" r="9" fill="#805ad5" opacity="0.85"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Animated Background for Home Section -->
+    <div class="animated-bg" aria-hidden="true">
+        <svg class="aiml-bg-svg" width="100%" height="100%" viewBox="0 0 1440 700" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:1;pointer-events:none;">
+            <!-- Neural network lines -->
+            <line x1="200" y1="200" x2="600" y2="400" stroke="#38a1db" stroke-width="3" opacity="0.18"/>
+            <line x1="600" y1="400" x2="1200" y2="300" stroke="#805ad5" stroke-width="3" opacity="0.18"/>
+            <line x1="1200" y1="300" x2="1300" y2="600" stroke="#38a169" stroke-width="3" opacity="0.18"/>
+            <line x1="600" y1="400" x2="1300" y2="600" stroke="#3182ce" stroke-width="3" opacity="0.13"/>
+            <line x1="200" y1="200" x2="1200" y2="300" stroke="#805ad5" stroke-width="2.5" opacity="0.13"/>
+            <line x1="200" y1="200" x2="1300" y2="600" stroke="#00bcd4" stroke-width="2.5" opacity="0.13"/>
+            <!-- Nodes -->
+            <circle class="aiml-node" cx="200" cy="200" r="22" fill="#38a1db" opacity="0.22"/>
+            <circle class="aiml-node" cx="600" cy="400" r="28" fill="#805ad5" opacity="0.22"/>
+            <circle class="aiml-node" cx="1200" cy="300" r="24" fill="#38a169" opacity="0.22"/>
+            <circle class="aiml-node" cx="1300" cy="600" r="32" fill="#3182ce" opacity="0.22"/>
+            <!-- Data points -->
+            <circle class="aiml-datapoint" cx="350" cy="320" r="8" fill="#38a169"/>
+            <circle class="aiml-datapoint" cx="900" cy="200" r="7" fill="#805ad5"/>
+            <circle class="aiml-datapoint" cx="1100" cy="500" r="6" fill="#38a1db"/>
+        </svg>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header ai-header" id="home">
+        <div class="container">
+            <div class="ai-header-card glass-card">
+                <div class="ai-header-main">
+                    <div class="ai-profile-photo-glow animated-glow">
+                        <!-- Animated background behind profile photo -->
+                        <div class="profile-bg-anim">
+                            <svg width="220" height="220" viewBox="0 0 220 220" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none;" fill="none">
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="90" fill="#3182ce22">
+                                    <animate attributeName="r" values="90;100;90" dur="4s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="60" fill="#805ad522">
+                                    <animate attributeName="r" values="60;70;60" dur="5s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="bg-anim-circle" cx="110" cy="110" r="35" fill="#38a16922">
+                                    <animate attributeName="r" values="35;45;35" dur="3.5s" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
+                        </div>
+                        <div class="profile-photo ai-glow">
+                            <img src="profile-photo.jpg" 
+                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/1a365d/ffffff?text=OR';" 
+                                 alt="Omkar Rathod" class="profile-image">
+                        </div>
+                    </div>
+                    <div class="profile-info ai-profile-info">
+                        <div class="hero-intro">
+                            <h2 class="hero-hi"><span class="hero-anim hero-anim-1">Hi, I'm</span></h2>
+                            <h1 class="hero-name"><span class="hero-anim hero-anim-2">Omkar Rathod</span></h1>
+                            <h3 class="hero-role"><span class="hero-anim hero-anim-3" id="hero-role-animated">AI/ML Engineer</span></h3>
+                            <p class="hero-tagline"><span class="hero-anim hero-anim-4">Passionate about building intelligent, real-world solutions with Artificial Intelligence and Machine Learning.</span></p>
+                        </div>
+                        <div style="display:flex;gap:1em;align-items:center;justify-content:flex-start;">
+                            <a href="#contact" class="project-btn" style="font-size:0.95em; border-radius:1.2em; background:linear-gradient(90deg,#3182ce 0%,#7c3aed 100%); color:#fff; font-weight:600; box-shadow:0 2px 8px #3182ce33; border:none; display:inline-block; transition:background 0.2s; padding:0.5em 1.5em;">Contact Me</a>
+                            <a href="https://github.com/omkarrathod23" target="_blank" class="profile-github-icon" style="background:#fff;border-radius:50%;border:2px solid #232946;padding:0.2em; color:#232946;font-size:1.2em;display:inline-flex;align-items:center;justify-content:center;width:1.8em;height:1.8em;transition:background 0.2s;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/omkar-rathod-a93467251/" target="_blank" style="color:#0077b5;font-size:1.5em;display:inline-flex;align-items:center;"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="ai-brain-particles" style="position:relative;display:inline-block;">
+                        <img src="brainvideo.png" alt="AI Brain" class="ai-brain-rocking" style="width:240px;max-width:100%;border-radius:1.2em;box-shadow:0 8px 32px 0 #23294655;margin-left:2em;" />
+                        <div class="ai-brain-particle p1"></div>
+                        <div class="ai-brain-particle p2"></div>
+                        <div class="ai-brain-particle p3"></div>
+                        <div class="ai-brain-particle p4"></div>
+                        <div class="ai-brain-particle p5"></div>
+                        <div class="ai-brain-particle p6"></div>
+                        <div class="ai-brain-particle p7"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- About Me Section -->
+            <section class="section" id="about">
+                <h2 class="section-title"><span class="section-icon"><i class="fas fa-brain"></i></span> About Me</h2>
+                <div class="about-content">
+                    <div class="aihand-accent">
+                        <img src="aihand.png" alt="AI Hand" class="aihand-img" />
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            I'm a final-year B.E. CSE (AI & ML) student at ViMEET, Maharashtra, with a strong interest in building AI-powered solutions that create real impact. I have experience in developing machine learning models, full-stack web applications, and smart systems that solve practical problems.<br>
+                            Through internships and hackathons, I've gained hands-on experience and enjoy combining technical skills with creativity to drive innovation in the AI and data science space.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+<section class="section" id="education">
+    <h2 class="section-title">
+        <span class="section-icon small-icon"><i class="fas fa-graduation-cap"></i></span> Education
+    </h2>
+    <div class="education-item">
+        <div class="education-header">
+            <h3>B.E. in CSE (Artificial Intelligence & Machine Learning)</h3>
+            <span class="institution">
+                <a href="https://vishwaniketan.edu.in/" target="_blank" rel="noopener noreferrer" class="institution-btn">
+                    Vishwaniketan's ViMEET, Mumbai, Maharashtra
+                </a>
+            </span>
+        </div>
+        <p class="education-details">Final Year – Sem 7</p>
+        <p class="education-details">Expected Graduation: June 2026</p>
+    </div>
+</section>
+            
+            <!-- Experience Section -->
+            <section class="section" id="experience">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Founder & Web Developer – Sweet Delight
+                                <a href="https://sweet-delights-40028.web.app/" class="project-btn" style="margin-left:1em; text-decoration:none; pointer-events:auto; z-index:1000; position:relative; padding:0.35em 1.1em; font-size:0.75em; border-radius:1.2em; background:linear-gradient(90deg,#7c3aed 0%,#3182ce 100%); color:#fff; font-weight:600; box-shadow:0 2px 8px #3182ce33; border:none; display:inline-block; transition:background 0.2s;">Sweet Delight</a>
+                            </h3>
+                            <span class="duration">April 2025 </span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Founded a home-based online cake business. Developed a responsive website using HTML, CSS, JavaScript, and Firebase, enabling smooth order placement, and real-time updates.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section (Animated & Attractive) -->
+            <section class="section projects-section" id="projects">
+                <h2 class="section-title"><span class="section-icon"><i class="fas fa-project-diagram"></i></span> Projects</h2>
+                <!-- Animated SVG background for projects -->
+                <div class="projects-bg-anim">
+                    <svg width="100%" height="180" viewBox="0 0 1440 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0,120 Q360,180 720,120 T1440,120 V180 H0 Z" fill="#7c3aed22">
+                            <animate attributeName="d" dur="6s" repeatCount="indefinite"
+                                values="M0,120 Q360,180 720,120 T1440,120 V180 H0 Z;M0,100 Q360,140 720,100 T1440,120 V180 H0 Z;M0,120 Q360,180 720,120 T1440,120 V180 H0 Z"/>
+                        </path>
+                    </svg>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card animated-card tilt-effect" 
+                         data-title="Customer Churn Risk Prediction"
+                         data-description="A machine learning web app to predict customer churn using XGBoost & Keras. Real-time & batch predictions, SHAP explainability, Streamlit UI, and deployment-ready."
+                         data-img1="churn-sample.png"
+                         data-img2="churn-sample 2.png"
+                         data-link-demo="https://customer-churn-risk-prediction-model-vz8hu6xxrd46s9xn8fcoek.streamlit.app/"
+                         data-link-github="https://github.com/omkarrathod23/Customer-Churn-Risk-Prediction-Model.git">
+                        <div class="project-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Customer Analytics Logo" class="project-logo-img" />
+                        </div>
+                        <h3 class="project-title">Customer Churn Risk Prediction</h3>
+                        <p class="project-short-desc">ML web app to predict customer churn using XGBoost & Keras. Real-time & batch predictions, SHAP explainability.</p>
+                        <div class="project-links">
+                            <a href="https://customer-churn-risk-prediction-model-vz8hu6xxrd46s9xn8fcoek.streamlit.app/" class="project-btn" target="_blank">Live Demo</a>
+                            <a href="https://github.com/omkarrathod23/Customer-Churn-Risk-Prediction-Model.git" class="project-btn secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card animated-card tilt-effect"
+                         data-title="Sentiment Analysis Web App"
+                         data-description="Real-time IMDb review sentiment analysis using LSTM (TensorFlow/Keras). Instant results, confidence visualization, Flask backend, and modern UI."
+                         data-img1="sentiment-sample.png"
+                         data-link-github="https://github.com/omkarrathod23/imdb-sentiment-website.git">
+                        <div class="project-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/742/742751.png" alt="Sentiment Analysis Logo" class="project-logo-img" />
+                        </div>
+                        <h3 class="project-title">Sentiment Analysis Web App</h3>
+                        <p class="project-short-desc">Real-time IMDb review sentiment analysis using LSTM (TensorFlow/Keras). Instant results, confidence visualization.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/omkarrathod23/imdb-sentiment-website.git" class="project-btn secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section class="section" id="skills">
+                <h2 class="section-title"><span class="section-icon"><i class="fas fa-microchip"></i></span> Technical Skills</h2>
+                <div class="skills-text-slider-mobile slider-with-arrows">
+                    <button class="slider-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-content">
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="chip-icon"/>Python</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="chip-icon"/>C</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="chip-icon"/>HTML</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="chip-icon"/>CSS</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="chip-icon"/>JavaScript</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="chip-icon"/>TensorFlow</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="chip-icon"/>PyTorch</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" class="chip-icon"/>Scikit-learn</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" class="chip-icon"/>Keras</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="chip-icon"/>NumPy</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="chip-icon"/>Pandas</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="chip-icon"/>Matplotlib</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="chip-icon"/>Jupyter</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="chip-icon"/>MySQL</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="chip-icon"/>PostgreSQL</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="chip-icon"/>MongoDB</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="chip-icon"/>OpenCV</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="chip-icon"/>Docker</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="chip-icon"/>Linux</div>
+                    </div>
+                    <button class="slider-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="skills-text-slider-mobile slider-with-arrows">
+                    <button class="slider-arrow left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-content">
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="chip-icon"/>Git</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="chip-icon"/>GitHub</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="chip-icon"/>VS Code</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="chip-icon"/>Jupyter</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" class="chip-icon"/>Google Cloud</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="chip-icon"/>AWS</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg" alt="FileZilla" class="chip-icon"/>FileZilla</div>
+                        <div class="skill-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Excel" class="chip-icon"/>Excel</div>
+                    </div>
+                    <button class="slider-arrow right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="skills-icons-columns">
+                    <div class="skills-column">
+                        <h3 class="skills-group-title">AI/ML & Data Science Skills</h3>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" class="skill-icon"/>
+                                <span class="icon-label">Python</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" title="C" class="skill-icon"/>
+                                <span class="icon-label">C</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" class="skill-icon"/>
+                                <span class="icon-label">HTML</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" class="skill-icon"/>
+                                <span class="icon-label">CSS</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" class="skill-icon"/>
+                                <span class="icon-label">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" class="skill-icon"/>
+                                <span class="icon-label">TensorFlow</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" class="skill-icon"/>
+                                <span class="icon-label">PyTorch</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" title="Scikit-learn" class="skill-icon"/>
+                                <span class="icon-label">Scikit-learn</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" title="Keras" class="skill-icon"/>
+                                <span class="icon-label">Keras</span>
+                            </div>
+                        </div>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" title="NumPy" class="skill-icon"/>
+                                <span class="icon-label">NumPy</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas" class="skill-icon"/>
+                                <span class="icon-label">Pandas</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" title="Matplotlib" class="skill-icon"/>
+                                <span class="icon-label">Matplotlib</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" title="Jupyter" class="skill-icon"/>
+                                <span class="icon-label">Jupyter</span>
+                            </div>
+                        </div>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL" class="skill-icon"/>
+                                <span class="icon-label">MySQL</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" class="skill-icon"/>
+                                <span class="icon-label">PostgreSQL</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB" class="skill-icon"/>
+                                <span class="icon-label">MongoDB</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV" class="skill-icon"/>
+                                <span class="icon-label">OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" class="skill-icon"/>
+                                <span class="icon-label">Docker</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" class="skill-icon"/>
+                                <span class="icon-label">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <h3 class="skills-group-title">Technical Tools</h3>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" class="skill-icon"/>
+                                <span class="icon-label">Git</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub" class="skill-icon"/>
+                                <span class="icon-label">GitHub</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" class="skill-icon"/>
+                                <span class="icon-label">VS Code</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" title="Jupyter" class="skill-icon"/>
+                                <span class="icon-label">Jupyter</span>
+                            </div>
+                        </div>
+                        <div class="skills-row">
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" title="Google Cloud" class="skill-icon"/>
+                                <span class="icon-label">Google Cloud</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" title="AWS" class="skill-icon"/>
+                                <span class="icon-label">AWS</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/filezilla/filezilla-plain.svg" alt="FileZilla" title="FileZilla" class="skill-icon"/>
+                                <span class="icon-label">FileZilla</span>
+                            </div>
+                            <div class="skill-icon-anim">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Excel" title="Excel" class="skill-icon"/>
+                                <span class="icon-label">Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="section" id="achievements">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements-list">
+                    <div class="achievement-item">
+                        <i class="fas fa-trophy"></i>
+                        <div class="achievement-content">
+                            <h3>Top 8 Finalist – Innoverse Hackfest 2K25 (State-Level Hackathon) <span style="font-size:0.9em; font-weight:400;"></span></h3>
+                            <p>Selected in top teams at Innoverse Hackfest 2K25 by PVG's COET, Pune.<br>Developed a hotel recommendation system with personalized plans and real-time suggestions.<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-medal"></i>
+                        <div class="achievement-content">
+                            <h3>Participant – Participant – National Level Hackathon "Hack To Crack 1.0"
+                                <span style="font-size:0.9em; font-weight:400;"></span></h3></span></h3>
+                                <p>Participated in "Hack To Crack 1.0," a national-level hackathon by ViMEET with Aptech, Unstop & RKDEMY.
+                                    <br>Gained hands-on experience in team-based problem-solving and innovation<br>
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section" id="contact">
+                <h2 class="section-title"><span class="section-icon"><i class="fas fa-envelope"></i></span> Contact Me</h2>
+                <div class="contact-chips-container">
+                    <div class="contact-chips-header">
+                        <strong>Omkar Rathod</strong>
+                        <div class="contact-chips-tagline">Let's connect!</div>
+                    </div>
+                    <div class="contact-chips-row">
+                        <a href="mailto:omkarrathod101050@gmail.com" class="contact-chip" title="Email">
+                            <span class="contact-chip-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="contact-chip-label">omkarrathod101050@gmail.com</span>
+                        </a>
+                        <a href="tel:+917249398891" class="contact-chip" title="Phone">
+                            <span class="contact-chip-icon"><i class="fas fa-phone"></i></span>
+                            <span class="contact-chip-label">+91-7249398891</span>
+                        </a>
+                        <div class="contact-chip" title="Location">
+                            <span class="contact-chip-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="contact-chip-label">Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Navigation Links -->
+                <div class="footer-nav">
+                    <a href="#home" class="footer-nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="footer-nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#contact" class="footer-nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="https://github.com/omkarrathod23" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/omkar-rathod-a93467251/" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/omkar_rathod23/" target="_blank" class="social-icon" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+                <!-- Copyright -->
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Omkar Rathod. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Button for Mobile -->
+    <button class="mobile-contact-btn" aria-label="Contact" onclick="window.scrollTo({top: document.getElementById('contact').offsetTop - 60, behavior: 'smooth'});">
+        <i class="fas fa-envelope"></i>
+    </button>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Add this just before </body> -->
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <span id="theme-toggle-icon" class="fas fa-moon"></span>
+    </button>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="project-modal">
+      <div class="project-modal-backdrop"></div>
+      <div class="project-modal-content">
+        <button class="project-modal-close" aria-label="Close">&times;</button>
+        <div class="project-modal-body">
+          <!-- Content will be injected by JS -->
+        </div>
+      </div>
+    </div>
+</body>
+</html> 
