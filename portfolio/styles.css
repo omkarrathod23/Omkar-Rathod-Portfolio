@@ -5282,12 +5282,45 @@ body.dark-mode .project-logo-img {
 }
 @media (max-width: 600px) {
   .project-modal-content {
-    padding: 1.1em 0.5em 1em 0.5em;
+    padding: 0.7em 0.2em 0.7em 0.2em;
     min-width: 0;
+    max-width: 98vw;
+    border-radius: 1em;
+  }
+  .project-modal-body h2 {
+    font-size: 1.05em;
+    margin-bottom: 0.5em;
+  }
+  .project-modal-body p {
+    font-size: 0.98em;
+    margin-bottom: 0.7em;
+  }
+  .project-modal-body .modal-imgs {
+    gap: 0.5em;
+    margin-bottom: 0.7em;
   }
   .project-modal-body .modal-imgs img {
-    max-width: 80px;
-    max-height: 60px;
+    max-width: 60vw;
+    max-height: 28vw;
+    min-width: 60px;
+    min-height: 40px;
+    border-radius: 0.7em;
+  }
+  .project-modal-close {
+    top: 0.5em;
+    right: 0.7em;
+    font-size: 1.5em;
+    padding: 0.2em 0.4em;
+  }
+  .project-modal-body .modal-links {
+    flex-direction: column;
+    gap: 0.6em;
+    align-items: flex-start;
+  }
+  .project-btn, .project-btn.secondary {
+    font-size: 0.98em;
+    padding: 0.5em 1.1em;
+    min-width: 120px;
   }
 }
 body.dark-mode .project-modal-content {

@@ -155,6 +155,72 @@ document.addEventListener('DOMContentLoaded', function() {
         if (modal.classList.contains('active') && (e.key === 'Escape' || e.key === 'Esc')) closeModal();
       });
     })();
+
+    // Mobile swipe down to close and image zoom for project modal
+    (function() {
+      const modal = document.getElementById('project-modal');
+      const modalContent = modal.querySelector('.project-modal-content');
+      let startY = null, currentY = null, dragging = false;
+
+      // Swipe down to close (touch only)
+      if ('ontouchstart' in window) {
+        modalContent.addEventListener('touchstart', function(e) {
+          if (e.touches.length !== 1) return;
+          startY = e.touches[0].clientY;
+          dragging = true;
+        });
+        modalContent.addEventListener('touchmove', function(e) {
+          if (!dragging || e.touches.length !== 1) return;
+          currentY = e.touches[0].clientY;
+          const deltaY = currentY - startY;
+          if (deltaY > 0) {
+            modalContent.style.transform = `translateY(${deltaY}px)`;
+            modalContent.style.transition = 'none';
+          }
+        });
+        modalContent.addEventListener('touchend', function(e) {
+          if (!dragging) return;
+          const deltaY = (currentY || 0) - (startY || 0);
+          modalContent.style.transition = '';
+          if (deltaY > 60) {
+            // Close modal
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          } else {
+            modalContent.style.transform = '';
+          }
+          dragging = false;
+          startY = null;
+          currentY = null;
+        });
+      }
+
+      // Image zoom on tap
+      document.addEventListener('click', function(e) {
+        const img = e.target.closest('.modal-imgs img');
+        if (!img) return;
+        // Create zoom overlay
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(20,24,40,0.92)';
+        overlay.style.zIndex = 20000;
+        overlay.style.display = 'flex';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        overlay.style.cursor = 'zoom-out';
+        overlay.innerHTML = `<img src="${img.src}" alt="Zoomed image" style="max-width:96vw;max-height:92vh;border-radius:1.2em;box-shadow:0 8px 48px #23294688;">`;
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+        overlay.addEventListener('click', function() {
+          overlay.remove();
+          document.body.style.overflow = '';
+        });
+      });
+    })();
 });
 
 function initializeNavigation() {
